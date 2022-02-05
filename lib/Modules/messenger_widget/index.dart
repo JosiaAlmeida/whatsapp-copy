@@ -36,7 +36,7 @@ class MessengerWidget extends StatelessWidget {
         itemCount: UserName.length,
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
-            onTap: () => print("${index}"),
+            onTap: () => Navigator.pushNamed(context, '/chat'),
             child: Container(
               // ignore: prefer_const_constructors
               margin: EdgeInsets.only(top: 10),
@@ -46,6 +46,8 @@ class MessengerWidget extends StatelessWidget {
                   Row(
                     children: [
                       PhotoProfile(
+                        width: 50,
+                        height: 50,
                         color: Img[index],
                       ),
                       DescriprionMessenger(

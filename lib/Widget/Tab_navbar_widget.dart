@@ -22,150 +22,152 @@ class _TabNavbarWidgetState extends State<TabNavbarWidget> {
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: Colors.grey.shade900,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(84),
-        child: Container(
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(boxShadow: [
-            BoxShadow(offset: Offset(0, 3), color: Colors.grey.shade900)
-          ]),
-          child: Column(
-            children: [
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    // ignore: prefer_const_constructors
-                    Text(
-                      "WhatsApp",
-                      // ignore: prefer_const_constructors
-                      style: TextStyle(color: Colors.grey, fontSize: 20),
-                    ),
-                    Container(
-                      child: Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          // ignore: prefer_const_constructors
-                          Icon(
-                            Icons.search,
-                            color: Colors.grey,
-                          ),
-                          // ignore: prefer_const_constructors
-                          Icon(
-                            FontAwesomeIcons.ellipsisV,
-                            color: Colors.grey,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                  margin: EdgeInsets.only(top: 10),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade900,
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(104),
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(offset: Offset(0, 3), color: Colors.grey.shade900)
+            ]),
+            child: Column(
+              children: [
+                Container(
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextButton(
-                          onPressed: () {
-                            setState(() {
-                              controllerNavbar = 1;
-                            });
-                          },
-                          child: const Icon(
-                            FontAwesomeIcons.camera,
-                            color: Colors.grey,
-                          ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // ignore: prefer_const_constructors
+                      Text(
+                        "WhatsApp",
+                        // ignore: prefer_const_constructors
+                        style: TextStyle(color: Colors.grey, fontSize: 20),
+                      ),
+                      Container(
+                        child: Row(
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            // ignore: prefer_const_constructors
+                            Icon(
+                              Icons.search,
+                              color: Colors.grey,
+                            ),
+                            // ignore: prefer_const_constructors
+                            Icon(
+                              FontAwesomeIcons.ellipsisV,
+                              color: Colors.grey,
+                            )
+                          ],
                         ),
-                        Container(
-                          // ignore: prefer_const_constructors
-                          decoration: BoxDecoration(
-                              // ignore: prefer_const_constructors
-                              border: Border(
-                                  bottom: controllerNavbar == 0
-                                      ? borderBottom
-                                      : borderNone)),
-                          child: TextButton(
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton(
                             onPressed: () {
                               setState(() {
-                                controllerNavbar = 0;
+                                controllerNavbar = 1;
                               });
                             },
-                            child: controllerNavbar == 0
-                                ? const Text(
-                                    "Conversas",
-                                    style: TextStyle(
-                                        color: Colors.green, fontSize: 18),
-                                  )
-                                : Text(
-                                    "Conversas",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 18),
-                                  ),
+                            child: const Icon(
+                              FontAwesomeIcons.camera,
+                              color: Colors.grey,
+                            ),
                           ),
-                        ),
-                        Container(
-                          // ignore: prefer_const_constructors
-                          decoration: BoxDecoration(
-                              // ignore: prefer_const_constructors
-                              border: Border(
-                                  bottom: controllerNavbar == 2
-                                      ? borderBottom
-                                      : borderNone)),
-                          child: TextButton(
-                            onPressed: () {
-                              setState(() {
-                                controllerNavbar = 2;
-                              });
-                            },
-                            child: controllerNavbar == 2
-                                ? const Text(
-                                    "Estado",
-                                    style: TextStyle(
-                                        color: Colors.green, fontSize: 18),
-                                  )
-                                : const Text(
-                                    "Estado",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 18),
-                                  ),
+                          Container(
+                            // ignore: prefer_const_constructors
+                            decoration: BoxDecoration(
+                                // ignore: prefer_const_constructors
+                                border: Border(
+                                    bottom: controllerNavbar == 0
+                                        ? borderBottom
+                                        : borderNone)),
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  controllerNavbar = 0;
+                                });
+                              },
+                              child: controllerNavbar == 0
+                                  ? const Text(
+                                      "Conversas",
+                                      style: TextStyle(
+                                          color: Colors.green, fontSize: 18),
+                                    )
+                                  : Text(
+                                      "Conversas",
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18),
+                                    ),
+                            ),
                           ),
-                        ),
-                        Container(
-                          // ignore: prefer_const_constructors
-                          decoration: BoxDecoration(
-                              // ignore: prefer_const_constructors
-                              border: Border(
-                                  bottom: controllerNavbar == 3
-                                      ? borderBottom
-                                      : borderNone)),
-                          child: TextButton(
-                            onPressed: () {
-                              setState(() {
-                                controllerNavbar = 3;
-                              });
-                            },
-                            child: controllerNavbar == 3
-                                ? const Text(
-                                    "Chamadas",
-                                    style: TextStyle(
-                                        color: Colors.green, fontSize: 18),
-                                  )
-                                : const Text(
-                                    "Chamadas",
-                                    style: TextStyle(
-                                        color: Colors.grey, fontSize: 18),
-                                  ),
+                          Container(
+                            // ignore: prefer_const_constructors
+                            decoration: BoxDecoration(
+                                // ignore: prefer_const_constructors
+                                border: Border(
+                                    bottom: controllerNavbar == 2
+                                        ? borderBottom
+                                        : borderNone)),
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  controllerNavbar = 2;
+                                });
+                              },
+                              child: controllerNavbar == 2
+                                  ? const Text(
+                                      "Estado",
+                                      style: TextStyle(
+                                          color: Colors.green, fontSize: 18),
+                                    )
+                                  : const Text(
+                                      "Estado",
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18),
+                                    ),
+                            ),
                           ),
-                        )
-                      ])),
-            ],
+                          Container(
+                            // ignore: prefer_const_constructors
+                            decoration: BoxDecoration(
+                                // ignore: prefer_const_constructors
+                                border: Border(
+                                    bottom: controllerNavbar == 3
+                                        ? borderBottom
+                                        : borderNone)),
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  controllerNavbar = 3;
+                                });
+                              },
+                              child: controllerNavbar == 3
+                                  ? const Text(
+                                      "Chamadas",
+                                      style: TextStyle(
+                                          color: Colors.green, fontSize: 18),
+                                    )
+                                  : const Text(
+                                      "Chamadas",
+                                      style: TextStyle(
+                                          color: Colors.grey, fontSize: 18),
+                                    ),
+                            ),
+                          )
+                        ])),
+              ],
+            ),
           ),
         ),
+        body: MessengerWidget(),
       ),
-      body: MessengerWidget(),
     );
   }
 }
