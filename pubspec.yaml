@@ -34,6 +34,9 @@ dependencies:
   shared_preferences: ^2.0.11
   font_awesome_flutter: ^9.2.0
   splashscreen: ^1.2.0
+  camera:
+  path_provider:
+  path:
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,11 +1,19 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsappcopy/Modules/Camera/index.dart';
 import 'package:whatsappcopy/Modules/Chat_widget/index.dart';
 import 'package:whatsappcopy/Modules/Tab_navbar_widget.dart';
 import 'package:whatsappcopy/Widget/Splash_widget/index.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final cameras;
+  MyApp({Key? key, required this.cameras}) : super(key: key);
 
+  // Obtain a list of the available cameras on the device.
+  // final cameras = await availableCameras();
+
+  // // Get a specific camera from the list of available cameras.
+  // final firstCamera = cameras.first;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +23,8 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => SplashWidget(),
           '/list-chat': (context) => TabNavbarWidget(),
-          '/chat': (context) => ChatMessenger()
+          '/chat': (context) => ChatMessenger(),
+          '/TakePictureScreen': (context) => TakePictureScreen(camera: cameras)
         });
   }
 }

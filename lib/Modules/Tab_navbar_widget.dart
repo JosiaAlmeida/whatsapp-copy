@@ -127,11 +127,8 @@ class _TabNavbarWidgetState extends State<TabNavbarWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  controllerNavbar = 1;
-                                });
-                              },
+                              onPressed: () => Navigator.pushNamed(
+                                  context, "/TakePictureScreen"),
                               child: const Icon(
                                 FontAwesomeIcons.camera,
                                 color: Colors.grey,
