@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappcopy/Modules/Chat_widget/index.dart';
-import 'package:whatsappcopy/Modules/Splash_widget/index.dart';
-import 'package:whatsappcopy/Widget/Tab_navbar_widget.dart';
+import 'package:whatsappcopy/Modules/Tab_navbar_widget.dart';
+import 'package:whatsappcopy/Widget/Splash_widget/index.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

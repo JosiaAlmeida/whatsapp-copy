@@ -15,19 +15,19 @@ class _ChatMessengerState extends State<ChatMessenger> {
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70),
+          preferredSize: const Size.fromHeight(100),
           // bottom: Navigator.pop(context),
           child: Container(
             decoration: BoxDecoration(color: Colors.grey.shade900),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     TextButton(
                         onPressed: () =>
                             Navigator.popAndPushNamed(context, "/list-chat"),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back,
                           color: Colors.white,
                         )),
@@ -36,23 +36,30 @@ class _ChatMessengerState extends State<ChatMessenger> {
                       height: 40,
                       color: Colors.yellow,
                     ),
+                    Container(
+                      margin: const EdgeInsets.only(left: 5),
+                      child: const Text(
+                        "Josia Almeida",
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ],
-                ),
-                Text(
-                  "Josia Almeida",
-                  style: TextStyle(color: Colors.white),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width / 3,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Icon(
-                        FontAwesomeIcons.video,
+                      const Icon(FontAwesomeIcons.video,
+                          color: Colors.white, size: 15),
+                      const Icon(
+                        FontAwesomeIcons.phoneAlt,
                         color: Colors.white,
+                        size: 15,
                       ),
-                      Icon(FontAwesomeIcons.phoneAlt, color: Colors.white),
-                      Icon(FontAwesomeIcons.ellipsisV, color: Colors.white)
+                      const Icon(FontAwesomeIcons.ellipsisV,
+                          color: Colors.white, size: 15)
                     ],
                   ),
                 )
@@ -63,7 +70,7 @@ class _ChatMessengerState extends State<ChatMessenger> {
         body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(color: Colors.amber),
+            decoration: const BoxDecoration(color: Colors.amber),
             child: Stack(
               children: [
                 Positioned(
@@ -80,33 +87,28 @@ class _ChatMessengerState extends State<ChatMessenger> {
                                   borderRadius: BorderRadius.circular(100)),
                               width: MediaQuery.of(context).size.width * 0.8,
                               height: 50,
-                              child: TextField(
+                              child: const TextField(
+                                cursorColor: Colors.white,
                                 decoration: InputDecoration(
+                                  border: InputBorder.none,
                                   prefixIcon:
                                       Icon(Icons.face, color: Colors.white),
                                   prefixIconColor: Colors.white,
-                                  labelText: 'Mensagem',
+                                  hintText: 'Mensagem',
                                   labelStyle: TextStyle(color: Colors.white),
                                   hintStyle: TextStyle(color: Colors.white),
-                                  // suffixIcon: Row(
-                                  //   children: [
-                                  //     Icon(Icons.camera),
-                                  //     Icon(Icons.camera)
-                                  //   ],
-                                  // ),
-                                  // suffixIconColor: Colors.white
                                 ),
                               ),
                             ),
                             Container(
                               width: 50,
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               decoration: BoxDecoration(
                                   color: Colors.green,
                                   borderRadius: BorderRadius.circular(100)),
                               child: TextButton(
                                   onPressed: () {},
-                                  child: Icon(FontAwesomeIcons.microphone,
+                                  child: const Icon(FontAwesomeIcons.microphone,
                                       color: Colors.white)),
                             )
                           ],

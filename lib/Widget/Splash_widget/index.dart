@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'package:whatsappcopy/Widget/Tab_navbar_widget.dart';
+import 'package:whatsappcopy/Modules/Tab_navbar_widget.dart';
 
 class SplashWidget extends StatelessWidget {
   const SplashWidget({Key? key}) : super(key: key);
